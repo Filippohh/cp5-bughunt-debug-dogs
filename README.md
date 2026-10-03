@@ -6,12 +6,12 @@
 
 | Integrante | RM | Turma |
 |---|---|---|
-| Gabriel do Vale Vergueiro | 564439 | ___ |
-| Isabella Piñeiro Santana | 562779 | ___ |
-| Pedro Henrique Souza Barreto | 564437 | ___ |
-| Filippo Picino Mendez | 565994 | ___ |
-| Pam Mitchell Barbosa Durham | 562635 | ___ |
-| Gustavo Henrique Rodovalho Silva | 563695 | ___ |
+| Gabriel do Vale Vergueiro | 564439 | 2CCPX |
+| Isabella Piñeiro Santana | 562779 | 2CCPX |
+| Pedro Henrique Souza Barreto | 564437 | 2CCPX |
+| Filippo Picino Mendez | 565994 | 2CCPX |
+| Pam Mitchell Barbosa Durham | 562635 | 2CCPX |
+| Gustavo Henrique Rodovalho Silva | 563695 | 2CCPX |
 
 | Campo | |
 |---|---|
