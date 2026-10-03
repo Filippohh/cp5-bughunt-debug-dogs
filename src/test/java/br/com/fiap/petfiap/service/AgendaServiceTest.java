@@ -103,6 +103,21 @@ public class AgendaServiceTest {
     }
 
     @Test
+    public void deveRecusarCancelamentoQuandoAtendimentoJaConcluido() {
+        // Arrange
+        Banho jaConcluido = banhoDoRexAmanha10h();
+        jaConcluido.setStatus("CONCLUIDO");
+        when(repository.findById(1L)).thenReturn(Optional.of(jaConcluido));
+
+        // Act + Assert: atendimento ja realizado nao pode ser cancelado
+        assertThrows(StatusInvalidoException.class, () -> service.cancelar(1L));
+
+        // O status continua CONCLUIDO e nada e salvo
+        assertEquals("CONCLUIDO", jaConcluido.getStatus());
+        verify(repository, never()).save(any());
+    }
+
+    @Test
     public void deveLancarExcecaoQuandoAtendimentoNaoExiste() {
         // Arrange
         when(repository.findById(99L)).thenReturn(Optional.empty());
