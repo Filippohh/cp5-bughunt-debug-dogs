@@ -30,4 +30,16 @@ public class TosaTest {
         // Assert
         assertEquals(70.0, preco, 0.001);
     }
+
+    @Test
+    public void deveDurar60MinutosQuandoForTosa() {
+        // Arrange: a tosa e usada pelo tipo abstrato, como no controller (polimorfismo)
+        Atendimento tosa = tosaDoRex();
+
+        // Act
+        int duracao = tosa.getDuracaoMinutos();
+
+        // Assert
+        assertEquals(60, duracao);
+    }
 }
