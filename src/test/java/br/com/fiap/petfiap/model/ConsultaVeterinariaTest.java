@@ -30,4 +30,17 @@ public class ConsultaVeterinariaTest {
         // Assert
         assertEquals(30, duracao);
     }
+
+    @Test
+    public void deveCustar150ReaisQuandoQualquerPorte() {
+        // Arrange
+        LocalDateTime data = LocalDateTime.of(2026, 10, 1, 14, 0);
+        ConsultaVeterinaria pequeno = new ConsultaVeterinaria(1, "Mimi", "PEQUENO", "Bruno", data);
+        ConsultaVeterinaria grande = new ConsultaVeterinaria(2, "Bidu", "GRANDE", "Bruno", data);
+
+        // Act + Assert: o porte nao muda o preco da consulta
+        assertEquals(150.0, pequeno.calcularPreco(), 0.001);
+        assertEquals(150.0, consultaDaMimi().calcularPreco(), 0.001);
+        assertEquals(150.0, grande.calcularPreco(), 0.001);
+    }
 }
