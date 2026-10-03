@@ -1,9 +1,14 @@
 package br.com.fiap.petfiap.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 // Padrao Singleton (Aula 14): uma unica instancia em toda a aplicacao,
 // responsavel por gerar os protocolos sequenciais dos atendimentos.
 // Thread-safe para o uso concorrente do pet shop.
 public class GeradorProtocolo {
+
+    private static final Logger log = LoggerFactory.getLogger(GeradorProtocolo.class);
 
     private static GeradorProtocolo instancia;
 
@@ -11,7 +16,7 @@ public class GeradorProtocolo {
 
     private GeradorProtocolo() {
         contador = 0;
-        System.out.println("GeradorProtocolo criado!");
+        log.info("GeradorProtocolo criado");
     }
 
     public static synchronized GeradorProtocolo getInstancia() {
