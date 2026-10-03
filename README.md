@@ -2,7 +2,7 @@
 
 ## Identificação
 
-**Grupo:** POO-CP5
+**Grupo:** Debug Dogs
 
 | Integrante | RM | Turma |
 |---|---|---|
