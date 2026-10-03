@@ -74,6 +74,19 @@ public class AgendaServiceTest {
     }
 
     @Test
+    public void deveRecusarAgendamentoQuandoDataHoraNoPassado() {
+        // Arrange: banho para ontem
+        Banho noPassado = new Banho(3, "Rex", "PEQUENO", "Ana", LocalDateTime.now().minusDays(1));
+
+        // Act + Assert
+        assertThrows(IllegalArgumentException.class, () -> service.agendar(noPassado));
+
+        // O banco nem e consultado
+        verify(repository, never()).findByPetNome(any());
+        verify(repository, never()).save(any());
+    }
+
+    @Test
     public void deveConcluirAtendimentoAgendado() {
         // Arrange
         Banho agendado = banhoDoRexAmanha10h();
