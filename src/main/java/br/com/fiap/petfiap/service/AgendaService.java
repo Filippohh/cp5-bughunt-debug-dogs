@@ -6,7 +6,6 @@ import br.com.fiap.petfiap.model.Atendimento;
 import br.com.fiap.petfiap.repository.AtendimentoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,8 +17,11 @@ public class AgendaService {
 
     private static final Logger log = LoggerFactory.getLogger(AgendaService.class);
 
-    @Autowired
-    private AtendimentoRepository repository;
+    private final AtendimentoRepository repository;
+
+    public AgendaService(AtendimentoRepository repository) {
+        this.repository = repository;
+    }
 
     // Agenda um novo atendimento: recusa data/hora no passado e horario ja ocupado pelo mesmo pet.
     public Atendimento agendar(Atendimento novo) {
